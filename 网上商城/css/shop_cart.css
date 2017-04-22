@@ -1,0 +1,55 @@
+#content{
+	padding-top: 88px;
+}
+#title{
+	font-size: 24px;
+	color: #7c7c7c;
+	padding: 15px 0;
+	font-weight: normal;
+}
+table{
+	width: 100%;
+}
+thead th{
+	background: #e5412d;
+	font-size: 14px;
+	padding: 8px;
+	text-align: left;
+	color: #fff;
+}
+tbody{
+	border-color: #efefef;
+    border-width: 1px;
+    border-left: 1px solid #dddddd;
+}
+tbody td{
+	text-align: center;
+	border-color: #efefef;
+    border-width: 1px;
+    color: #7c7c7c;
+}
+tbody img{
+	width: 80px;
+	display: block;
+    padding: 3px;
+    border: 1px solid #efefef;
+    background: #fff;
+    float: left;
+    margin-right: 10px;
+}
+tbody td .and{
+	border-width: 1px;
+    text-align: left;
+}
+.and h3{
+	font-weight: 400;
+    color: #4d4d4d;
+    line-height: 20px;
+}
+.and a{
+	font-size: 12px;
+	color: #e5412d;
+}
+input{
+	width: 40px;
+}
