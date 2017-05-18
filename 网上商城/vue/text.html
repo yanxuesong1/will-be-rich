@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<button v-on:click="msg++">click</button>
+		当前点击次数：{{msg}}
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		var vm = new Vue({
+			el:'app',
+			data:{
+				msg:0
+			},
+			// methods:{
+			// 	add:function(){
+			// 		this.msg++;
+			// 	}
+			// }
+		});
+	</script>
+</body>
+</html>
