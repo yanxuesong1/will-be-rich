@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p><a href="#" class="tolltip" title="这是一个超链接提示1">提示1</a></p>
+	<p><a href="#" class="tolltip" title="这是一个超链接提示2">提示2</a></p>
+	<p><a href="#" title="这是一个自然提示提示2">自然提示1</a></p>
+	<p><a href="#" title="这是一个自然提示提示2">自然提示2</a></p>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$('.tolltip').on('mouseover',function(e){
+		var $tip = $('<span class="tip">'+this.title+'</span>')
+				.css({
+					left:e.pageX+20,
+					top:e.pageY+20
+				});
+		this.title="";
+		$('body').append($tip);
+
+	});
+	$('.tolltip').on('mouseout',function(e){
+		this.title = $('.tip').html();
+		$('.tip').remove();
+	});
+	$('.tolltip').on('mousemove',function(e){
+		$('.tip').css({
+			left:e.pageX+20,
+			top:e.pageY+20
+		});
+	});
+</script>
+</body>
+</html>
