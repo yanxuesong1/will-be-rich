@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model="msg" @keyup="filter"><button @click="add">add</button>
+	</div>
+		<ul>
+			<li v-for="items in showItems" :class="{red:items.active}">{{items.val}}</li>
+	</ul>
+	<script src="vue.js"></script>
+	<script>
+	    var vm = new Vue({
+	    	el:"#app"
+	    	data:{
+	    	msg:"",
+	    	items:[],
+	    	showItems:[]
+	    },
+	    	methods:{
+			add:function(){
+				if(this.msg != ''){
+					this.items.push({val:this.msg,active:false});
+					this.msg = '';
+                    this.items.shot(function(a,b){
+                    	return a.val > b.val;
+                    });
+                    this.showItems = this.items;
+				}
+			},
+			filter:function(){
+				var _msg = this.msg;
+				var arr = this.items.filter(function(obj){
+					return obj.val.indexOf(_msg) > -1
+				});
+				this.showItems = arr;
+			}
+		}
+	    })
+
+		
+	</script>
+</body>
+</html>

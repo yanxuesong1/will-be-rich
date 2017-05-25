@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<demo :my-msg-m="xx" msg2="zz"></demo>
+		<demo :my-msg-m="yy" msg2="pp"></demo>
+
+	</div>
+	<script src="vue.js"></script>
+	<script type="text/x-template" id="temp">
+		<div>
+			<h1>h1h1{{myMsgM}}h1h1h1h1</h1>
+			<div>
+				<h1>h1h1{{myMsgM}}h1h1h1</h1>
+			</div>
+		</div>
+	</script>
+	<script>
+		// Vue.component('demo',{
+		// 	template:'<h1>hhhhhhhhhhhh</h1>'
+		// });
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				xx:'333333',
+				yy:'222222'
+			},
+			components:{
+				demo:{
+					template:'#temp',
+					props:['myMsgM','msg2']
+				}
+			}
+		});
+	</script>
+</body>
+</html>
