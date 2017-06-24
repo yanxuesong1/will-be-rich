@@ -1,9 +1,9 @@
 <template>
   <div class="nav">
     <ul>
-      <li>top250</li>
-      <li>正在热映</li>
-      <li>即将上映</li>
+      <li><router-link to="/movie/top250">top250</router-link></li>
+      <li><router-link to="/movie/hot">正在热映</router-link></li>
+      <li><router-link to="/movie/coming">即将上映</router-link></li>
     </ul>
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
 
 }
 
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -27,7 +28,7 @@ export default {
   @import "../../assets/css/reset.css";
   .nav{
     height: 1rem;
-    color: #fff;
+    color: #ccc;
     background: rgb(33, 150, 243);
   }
   .nav ul{
@@ -38,6 +39,18 @@ export default {
     height: 1rem;
     text-align: center;
     line-height: 1rem;
+  }
+  .nav{
+    position: fixed;
+    top: 1rem;
+    width: 100%;
+  }
+  .nav a{
+    color: #ccc;
+    outline: none;
+  }
+  .nav a.router-link-active{
+    color: #fff;
   }
 
 </style>
