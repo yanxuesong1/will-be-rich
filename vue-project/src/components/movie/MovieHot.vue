@@ -30,7 +30,6 @@ export default {
           this.movieList = res.data.subjects;
       });
   }
-
 }
 
 </script>
@@ -41,6 +40,7 @@ export default {
   @import "../../assets/css/reset.css";
   .top-250{
     margin-top: 2rem;
+    margin-bottom: 1rem;
   }
   .movie-list{
     padding: 0.4rem;

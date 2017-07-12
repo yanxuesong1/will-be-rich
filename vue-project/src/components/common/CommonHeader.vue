@@ -1,6 +1,8 @@
 <template>
-  <div class="header">
-    <button @click="aa">首页</button>
+  <div class="header" :style="{background:$store.state.bgColor}">
+    <slot>
+      <button @click="aa">{{$store.state.nav}}</button>
+    </slot>
     <h2>{{$store.state.title}}</h2>
   </div>
 </template>
@@ -11,12 +13,11 @@ export default {
   data() {
     return {
       title:'22222222222222'
-
     }
   },
   methods:{
       aa:function(){
-          console.log(11111);
+          history.go(-1);
       }
   }
 }
@@ -31,13 +32,11 @@ export default {
     display: flex;
     height: 1rem;
     color: #fff;
-    background: rgb(33, 150, 243);
   }
   .header button{
     width: 1rem;
     height: 1rem;
     color: #fff;
-    background: rgb(33, 150, 243);
     border:none;
   }
   .header h2{

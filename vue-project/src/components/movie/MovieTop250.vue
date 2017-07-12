@@ -21,7 +21,6 @@
 
   import Axios from 'axios'
   import $ from 'jquery'
-
 export default {
   data() {
     return {
@@ -30,7 +29,7 @@ export default {
     }
   },
   mounted:function() {
-      this.loadData(0);
+      this.loadData();
       var _this = this;
       $(window).scroll(function(){
           var windowHeight = $(this).height();
@@ -38,13 +37,14 @@ export default {
           var height = $(document).height();
           if(windowHeight + scrollTop >= height){
             _this.show = true;
-            _this.loadData(_this.movieList.length);
+            _this.loadData();
           };
       });
   },
   methods:{
-      loadData(start){
-        Axios.get(API_PROXY+'https://api.douban.com/v2/movie/top250?count=10&start='+start)
+      loadData(){
+        var length = this.movieList.length;
+        Axios.get(API_PROXY+'https://api.douban.com/v2/movie/top250?count=10&start='+length)
           .then((res)=>{
           this.movieList = this.movieList.concat(res.data.subjects);
           this.show = false;
@@ -62,6 +62,7 @@ export default {
   @import "../../assets/css/reset.css";
   .top-250{
     margin-top: 2rem;
+    margin-bottom: 1rem;
   }
   .movie-list{
     padding: 0.4rem;
